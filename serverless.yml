@@ -12,9 +12,10 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
   stage: dev
   region: us-east-1
+  lambdaHashingVersion: "20201221"
   #environment:
   #  SAMPLE_ENV_VAR: ${env:SAMPLE_ENV_VAR}
 
@@ -25,3 +26,19 @@ functions:
       - http:
           path: hello
           method: get
+  graphql:
+    handler: graphQlHandler.server
+    environment:
+      SLS_DEBUG: true
+    events:
+      - http:
+          path: /graphiql
+          method: post
+          cors: true
+  playground:
+    handler: graphQlHandler.playground
+    events:
+      - http:
+          path: /graphiql
+          method: get
+          cors: true

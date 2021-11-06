@@ -1,0 +1,13 @@
+type Query {
+  hello(name: String): String
+  calculatePrice(
+    type: RequestType!
+    margin: Float!
+    exchangeRate: String!
+  ): Float!
+}
+
+enum RequestType {
+  buy
+  sell
+}
