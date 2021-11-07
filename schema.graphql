@@ -3,7 +3,7 @@ type Query {
   calculatePrice(
     type: RequestType!
     margin: Float!
-    exchangeRate: String!
+    exchangeRate: Float!
   ): Float!
 }
 
