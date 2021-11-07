@@ -1,8 +1,8 @@
 import {
+  computeMarginPercentage,
   convertToNGN,
   generateRawPrice,
   retrieveData,
-  validateMargin,
 } from "./helperFunctions";
 
 const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
@@ -15,7 +15,7 @@ const Query = {
       },
     } = await retrieveData(url);
 
-    margin = validateMargin(margin);
+    margin = computeMarginPercentage(margin);
 
     const rawPrice = generateRawPrice(type, margin, price);
 
