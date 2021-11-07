@@ -1,4 +1,9 @@
-import { convertToNGN, retrieveData, validateMargin } from "./helperFunctions";
+import {
+  convertToNGN,
+  generateRawPrice,
+  retrieveData,
+  validateMargin,
+} from "./helperFunctions";
 
 const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
@@ -11,12 +16,10 @@ const Query = {
     } = await retrieveData(url);
 
     margin = validateMargin(margin);
-    if (type === "buy") {
-      const buyPrice = price + margin * price;
-      return convertToNGN(buyPrice, exchangeRate);
-    }
-    const sellPrice = price - margin * price;
-    return convertToNGN(sellPrice, exchangeRate);
+
+    const rawPrice = generateRawPrice(type, margin, price);
+
+    return convertToNGN(rawPrice, exchangeRate);
   },
 };
 

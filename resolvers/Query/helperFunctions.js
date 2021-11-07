@@ -6,18 +6,23 @@ export const retrieveData = async (url) => {
     .then((res) => {
       return res.data;
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      throw new Error("An error occured in the process");
+    });
 };
 
 export const validateMargin = (margin) => {
-  // CHeck if the margin is greater than 1
-  if (margin < 100) {
-    console.log("less than");
-    return margin;
-  }
+  // get the percentage in decimal
+  return margin / 100;
+};
 
-  // return the
-  throw new Error("The margin should be greater than 0 and less than 1");
+export const generateRawPrice = (requestType, margin, price) => {
+  if (requestType === "buy") return price + margin * price;
+
+  if (requestType === "sell") return price - margin * price;
+
+  // while this shouldn't happen,  if neither buy or sell throw an error and end the flow
+  throw new Error(" Invalid transaction request");
 };
 
 export const convertToNGN = (amount, rate) => {
