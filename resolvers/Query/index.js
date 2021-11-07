@@ -1,11 +1,9 @@
-import * as fs from "fs";
 import { convertToNGN, retrieveData } from "./helperFunctions";
-const schema = fs.readFileSync("../schema.graphql", "utf8");
 
-export const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
 const Query = {
-  calcalculatePrice: async (_, { type, margin, exchangeRate }) => {
+  calculatePrice: async (_, { type, margin, exchangeRate }) => {
     const {
       bpi: {
         USD: { rate_float: price },

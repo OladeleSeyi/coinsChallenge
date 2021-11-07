@@ -1,3 +1,4 @@
+import axios from "axios";
 export const retrieveData = async (url) => {
   return axios
     .get(url)

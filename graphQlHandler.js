@@ -1,3 +1,5 @@
+import * as fs from "fs";
+const schema = fs.readFileSync("./schema.graphql", "utf8");
 import { GraphQLServerLambda } from "graphql-yoga";
 import Query from "./resolvers/Query";
 
