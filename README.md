@@ -16,6 +16,16 @@ Then run `serverless offline start` to begin.
 
 Per instructions you can find the Playground interface at the `localhost:3000/graphiql`
 
+## Testing
+
+You can run the tests by running `npm run test`
+
+### End to End Tests
+
+Run the single end to end mock by running
+
+`serverless invoke local -f graphql -p mocks/getPrice.json`
+
 ### Limitations
 
 - This solution implements calculatePrice (and its helper functions ) in the Query directory. Ideally, this should be separated into its own directory as a module.

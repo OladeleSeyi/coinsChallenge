@@ -1,0 +1,4 @@
+{
+  "body": "{\"operationName\":null,\"variables\":{},\"query\":\"{ calculatePrice(type: buy, margin: 0, exchangeRate: 571)}\"}",
+  "httpMethod": "POST"
+}
