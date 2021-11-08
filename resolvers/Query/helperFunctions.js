@@ -7,7 +7,7 @@ export const retrieveData = async (url) => {
       return res.data;
     })
     .catch((err) => {
-      throw new Error("An error occured in the process");
+      throw new Error("An error occured in the process", err);
     });
 };
 
