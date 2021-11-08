@@ -1,4 +1,4 @@
-import Query from "./index";
+import Query from "../index";
 
 describe("Tests Query Functions", () => {
   test("should (naively) test calculatePrice query", async () => {

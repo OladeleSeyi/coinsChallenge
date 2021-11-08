@@ -2,7 +2,7 @@ import {
   computeMarginPercentage,
   convertToNGN,
   generateRawPrice,
-} from "./helperFunctions";
+} from "../helperFunctions";
 describe("Unit tests for Calculate Price helpers ", () => {
   test("compute Percentage", () => {
     expect(computeMarginPercentage(20)).toEqual(0.2);
