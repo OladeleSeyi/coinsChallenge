@@ -16,16 +16,8 @@ provider:
   stage: dev
   region: us-east-1
   lambdaHashingVersion: "20201221"
-  #environment:
-  #  SAMPLE_ENV_VAR: ${env:SAMPLE_ENV_VAR}
 
 functions:
-  hello:
-    handler: handler.hello
-    events:
-      - http:
-          path: hello
-          method: get
   graphql:
     handler: graphQlHandler.server
     environment:
