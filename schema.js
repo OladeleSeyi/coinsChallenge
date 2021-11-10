@@ -8,6 +8,7 @@ const schema = {
   }
   
   enum RequestType {
+    # What type of transaction is this ?
     buy
     sell
   }

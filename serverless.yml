@@ -3,7 +3,7 @@ service: calculatePrice-api
 
 # Create an optimized package for our functions
 package:
-  individually: true
+  individually: false
 
 plugins:
   - serverless-bundle # Package our functions with Webpack

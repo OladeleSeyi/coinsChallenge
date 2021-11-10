@@ -18,7 +18,6 @@ const Query = {
     margin = computeMarginPercentage(margin);
 
     const rawPrice = generateRawPrice(type, margin, price);
-
     return convertToNGN(rawPrice, exchangeRate);
   },
 };
